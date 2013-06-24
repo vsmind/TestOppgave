@@ -16,21 +16,21 @@ public class testclient {
 	 */
 	public static void main(String[] args) throws RemoteException, ISystemAuthenticationExternal_GetAuthenticationChallenge_AltinnFaultFault_FaultMessage {
 
-		//
+
 		AuthenticationChallengeRequestBE request = new AuthenticationChallengeRequestBE();
 		//deklarerer variabler og setter verdier
 		String systemUserName = "1487";
 		String authMethod = "SMSPin";
 		String userSSN = "15054301542";
 		String userPassword = "test123";
-		//
+		//setter verdier
 		request.setSystemUserName(systemUserName);
 		request.setAuthMethod(authMethod);
 		request.setUserSSN(userSSN);
 		request.setUserPassword(userPassword);
-		//
+
 		SystemAuthenticationSIStub sa = new SystemAuthenticationSIStub("https://tt02.altinn.basefarm.net/AuthenticationExternal/SystemAuthentication.svc");
-		//
+
 		GetAuthenticationChallenge getAuthenticationChallenge4 = new GetAuthenticationChallenge();
 		getAuthenticationChallenge4.setChallengeRequest(request);
 		System.out.println("************************************");
